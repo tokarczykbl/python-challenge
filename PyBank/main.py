@@ -2,8 +2,7 @@
 import os
 import csv
 
-# Create placeholder variables for final analysis
-# Need to create a list to store changes
+# Create placeholder variables and lists for final analysis
 total_months = 0
 profit_loss = 0
 average_change = 0
@@ -15,9 +14,7 @@ months =[]
 # Create path to find budget_data.csv file
 csvpath = os.path.join('Resources', 'budget_data.csv')
 
-with open(csvpath) as csvfile:
-    
-    # CSV reader specifies delimiter and variable that holds contents
+with open(csvpath) as csvfile:   
     csvreader = csv.reader(csvfile, delimiter=',')
             
     # Read the header row first
@@ -58,6 +55,7 @@ decrease_month = months[(changes.index(greatest_decrease))]
 # create file path to store txt file in analysis folder
 output_path = os.path.join("Analysis", "PyBank_Analysis.txt")
 
+# write final analysis to text file that was created
 with open(output_path, 'w') as analysisfile:
 
     analysisfile.write("Financial Analysis\n")
